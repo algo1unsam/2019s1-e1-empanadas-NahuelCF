@@ -10,10 +10,24 @@ object gimenez {
 	method sueldo() { return sueldo }
 	method sueldo(nuevoValor) { sueldo = nuevoValor }
 	method cobrarSueldo(){
-		
+		if(sueldo >= deuda){
+			dinerototal = sueldo - deuda
+			deuda = 0
+		}
+		else{
+			deuda = deuda - sueldo
+			dinerototal = 0
+		}
 	}
 	method gastar(cantidad){
-		deuda += cantidad 
+		if(deuda + cantidad >= dinerototal){
+			deuda = deuda + cantidad - dinerototal
+			dinerototal = 0
+		}
+		else{
+			dinerototal -= (deuda + cantidad)
+			deuda = 0 
+		}
 	}
 	method totalDeuda(){
 		return deuda
