@@ -6,16 +6,24 @@ object gimenez {
 	var sueldo = 15000
 	var dinerototal = 0
 	var deuda = 0
+	//var = balance
+	//method totalDinero() = balance.max(0)
+	//method totalDeuda() = -balance.min(0)
+	//method cobrarSueldo(){
+	//	balance += self.sueldo()}
+	//
+	//method gastar(cuanto){
+	//	balance -= cuanto()}
 	
 	method sueldo() { return sueldo }
 	method sueldo(nuevoValor) { sueldo = nuevoValor }
 	method cobrarSueldo(){
 		if(sueldo >= deuda){
-			dinerototal = sueldo - deuda
+			dinerototal = sueldo - deuda // o self.sueldo()
 			deuda = 0
 		}
 		else{
-			deuda = deuda - sueldo
+			deuda = deuda - sueldo // tamb
 			dinerototal = 0
 		}
 	}
